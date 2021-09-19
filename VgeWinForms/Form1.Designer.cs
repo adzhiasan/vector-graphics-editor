@@ -88,6 +88,7 @@ namespace VgeWinForms
 			this.selectButton.Name = "selectButton";
 			this.selectButton.Size = new System.Drawing.Size(53, 24);
 			this.selectButton.Text = "Select";
+			this.selectButton.Click += ToolStripButton_Click;
 			// 
 			// rectangleButton
 			// 
@@ -97,6 +98,7 @@ namespace VgeWinForms
 			this.rectangleButton.Name = "rectangleButton";
 			this.rectangleButton.Size = new System.Drawing.Size(79, 24);
 			this.rectangleButton.Text = "Rectangle";
+			this.rectangleButton.Click += ToolStripButton_Click;
 			// 
 			// ellipseButton
 			// 
@@ -106,6 +108,7 @@ namespace VgeWinForms
 			this.ellipseButton.Name = "ellipseButton";
 			this.ellipseButton.Size = new System.Drawing.Size(56, 24);
 			this.ellipseButton.Text = "Ellipse";
+			this.ellipseButton.Click += ToolStripButton_Click;
 			// 
 			// mainPanel
 			// 

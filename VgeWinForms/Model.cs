@@ -12,7 +12,7 @@ namespace VgeWinForms
 
 		public void Add(Figure figure)
 		{
-			if (figure != null)
+			if (figure == null)
 				return;
 			if (figures.Contains(figure))
 				return;
