@@ -32,12 +32,15 @@ namespace VgeWinForms
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.mainToolStrip = new System.Windows.Forms.ToolStrip();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.selectButton = new System.Windows.Forms.ToolStripButton();
 			this.rectangleButton = new System.Windows.Forms.ToolStripButton();
 			this.ellipseButton = new System.Windows.Forms.ToolStripButton();
+			this.mainPanel = new System.Windows.Forms.Panel();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.mainToolStrip.SuspendLayout();
-			this.toolStrip1.SuspendLayout();
+			this.toolStrip.SuspendLayout();
+			this.mainPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// mainToolStrip
@@ -60,21 +63,25 @@ namespace VgeWinForms
 			this.toolStripButton1.Size = new System.Drawing.Size(36, 24);
 			this.toolStripButton1.Text = "File";
 			// 
-			// toolStrip1
+			// toolStrip
 			// 
-			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.toolStrip.ImeMode = System.Windows.Forms.ImeMode.On;
+			this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectButton,
             this.rectangleButton,
             this.ellipseButton});
-			this.toolStrip1.Location = new System.Drawing.Point(0, 27);
-			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(882, 27);
-			this.toolStrip1.TabIndex = 1;
-			this.toolStrip1.Text = "toolStrip1";
+			this.toolStrip.Location = new System.Drawing.Point(0, 27);
+			this.toolStrip.Name = "toolStrip";
+			this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+			this.toolStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.toolStrip.Size = new System.Drawing.Size(882, 27);
+			this.toolStrip.TabIndex = 1;
+			this.toolStrip.Text = "toolStrip";
 			// 
 			// selectButton
 			// 
+			this.selectButton.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
 			this.selectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.selectButton.Image = ((System.Drawing.Image)(resources.GetObject("selectButton.Image")));
 			this.selectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -100,20 +107,40 @@ namespace VgeWinForms
 			this.ellipseButton.Size = new System.Drawing.Size(56, 24);
 			this.ellipseButton.Text = "Ellipse";
 			// 
+			// mainPanel
+			// 
+			this.mainPanel.Controls.Add(this.textBox1);
+			this.mainPanel.Location = new System.Drawing.Point(0, 60);
+			this.mainPanel.Name = "mainPanel";
+			this.mainPanel.Size = new System.Drawing.Size(882, 594);
+			this.mainPanel.TabIndex = 2;
+			this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+			this.mainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseDown);
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(0, 0);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(125, 27);
+			this.textBox1.TabIndex = 0;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(882, 653);
-			this.Controls.Add(this.toolStrip1);
+			this.Controls.Add(this.toolStrip);
+			this.Controls.Add(this.mainPanel);
 			this.Controls.Add(this.mainToolStrip);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
 			this.Text = "Vector Graphics Editor";
 			this.mainToolStrip.ResumeLayout(false);
 			this.mainToolStrip.PerformLayout();
-			this.toolStrip1.ResumeLayout(false);
-			this.toolStrip1.PerformLayout();
+			this.toolStrip.ResumeLayout(false);
+			this.toolStrip.PerformLayout();
+			this.mainPanel.ResumeLayout(false);
+			this.mainPanel.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -123,10 +150,12 @@ namespace VgeWinForms
 
 		private System.Windows.Forms.ToolStrip mainToolStrip;
 		private System.Windows.Forms.ToolStripButton toolStripButton1;
-		private System.Windows.Forms.ToolStrip toolStrip1;
+		private System.Windows.Forms.ToolStrip toolStrip;
 		private System.Windows.Forms.ToolStripButton selectButton;
 		private System.Windows.Forms.ToolStripButton rectangleButton;
 		private System.Windows.Forms.ToolStripButton ellipseButton;
+		private System.Windows.Forms.Panel mainPanel;
+		private System.Windows.Forms.TextBox textBox1;
 	}
 }
 

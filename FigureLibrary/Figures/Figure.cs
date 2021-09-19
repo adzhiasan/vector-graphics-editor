@@ -31,7 +31,7 @@ namespace FigureLibrary
 			if (targetWidth > 0 || targetHeight > 0) 
 			{
 				width = targetWidth;
-				width = targetHeight;
+				height = targetHeight;
 			}
 			else
 				throw new Exception("Dimensions are less than zero!");
@@ -42,9 +42,6 @@ namespace FigureLibrary
 		public virtual bool Touch(float dx, float dy)
 			=> dx >= x && dy >= y && dx <= x + width && dy <= y + height;
 
-		public virtual Figure Clone()
-		{
-			return null;
-		}
+		public virtual Figure Clone() => null;
 	}
 }
