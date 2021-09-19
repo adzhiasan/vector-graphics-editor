@@ -6,7 +6,7 @@ namespace FigureLibrary.Creators
 	{
 		public override Figure Create()
 		{
-			Rect rectangle = new Rect();
+			Rect rectangle = new();
 			rectangle.Resize(100, 120);
 			return rectangle;
 		}
