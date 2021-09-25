@@ -30,38 +30,18 @@ namespace VgeWinForms
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-			this.mainToolStrip = new System.Windows.Forms.ToolStrip();
-			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.selectButton = new System.Windows.Forms.ToolStripButton();
 			this.rectangleButton = new System.Windows.Forms.ToolStripButton();
 			this.ellipseButton = new System.Windows.Forms.ToolStripButton();
 			this.mainPanel = new System.Windows.Forms.Panel();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.mainToolStrip.SuspendLayout();
+			this.figureDetectRadioButton = new System.Windows.Forms.RadioButton();
+			this.addFigToBarStripButton = new System.Windows.Forms.ToolStripButton();
+			this.mainToolStrip = new System.Windows.Forms.ToolStrip();
+			this.modifyStripButton = new System.Windows.Forms.ToolStripButton();
 			this.toolStrip.SuspendLayout();
-			this.mainPanel.SuspendLayout();
+			this.mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// mainToolStrip
-			// 
-			this.mainToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-			this.mainToolStrip.Location = new System.Drawing.Point(0, 0);
-			this.mainToolStrip.Name = "mainToolStrip";
-			this.mainToolStrip.Size = new System.Drawing.Size(882, 27);
-			this.mainToolStrip.TabIndex = 0;
-			this.mainToolStrip.Text = "toolStrip1";
-			// 
-			// toolStripButton1
-			// 
-			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton1.Name = "toolStripButton1";
-			this.toolStripButton1.Size = new System.Drawing.Size(36, 24);
-			this.toolStripButton1.Text = "File";
 			// 
 			// toolStrip
 			// 
@@ -81,7 +61,6 @@ namespace VgeWinForms
 			// 
 			// selectButton
 			// 
-			this.selectButton.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
 			this.selectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.selectButton.Image = ((System.Drawing.Image)(resources.GetObject("selectButton.Image")));
 			this.selectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -89,6 +68,7 @@ namespace VgeWinForms
 			this.selectButton.Size = new System.Drawing.Size(53, 24);
 			this.selectButton.Text = "Select";
 			this.selectButton.Click += ToolStripButton_Click;
+			//this.selectButton.Click += ToolStripButton_Click;
 			// 
 			// rectangleButton
 			// 
@@ -99,6 +79,7 @@ namespace VgeWinForms
 			this.rectangleButton.Size = new System.Drawing.Size(79, 24);
 			this.rectangleButton.Text = "Rectangle";
 			this.rectangleButton.Click += ToolStripButton_Click;
+			//this.rectangleButton.Click += ToolStripButton_Click;
 			// 
 			// ellipseButton
 			// 
@@ -109,10 +90,10 @@ namespace VgeWinForms
 			this.ellipseButton.Size = new System.Drawing.Size(56, 24);
 			this.ellipseButton.Text = "Ellipse";
 			this.ellipseButton.Click += ToolStripButton_Click;
+			//this.ellipseButton.Click += ToolStripButton_Click;
 			// 
 			// mainPanel
 			// 
-			this.mainPanel.Controls.Add(this.textBox1);
 			this.mainPanel.Location = new System.Drawing.Point(0, 60);
 			this.mainPanel.Name = "mainPanel";
 			this.mainPanel.Size = new System.Drawing.Size(882, 594);
@@ -120,45 +101,82 @@ namespace VgeWinForms
 			this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
 			this.mainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseDown);
 			// 
-			// textBox1
+			// figureDetectRadioButton
 			// 
-			this.textBox1.Location = new System.Drawing.Point(0, 0);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(125, 27);
-			this.textBox1.TabIndex = 0;
+			this.figureDetectRadioButton.AutoSize = true;
+			this.figureDetectRadioButton.Location = new System.Drawing.Point(753, 30);
+			this.figureDetectRadioButton.Name = "figureDetectRadioButton";
+			this.figureDetectRadioButton.Size = new System.Drawing.Size(117, 24);
+			this.figureDetectRadioButton.TabIndex = 3;
+			this.figureDetectRadioButton.TabStop = true;
+			this.figureDetectRadioButton.Text = "radioButton1";
+			this.figureDetectRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// addFigToBarStripButton
+			// 
+			this.addFigToBarStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.addFigToBarStripButton.Image = ((System.Drawing.Image)(resources.GetObject("addFigToBarStripButton.Image")));
+			this.addFigToBarStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.addFigToBarStripButton.Name = "addFigToBarStripButton";
+			this.addFigToBarStripButton.Size = new System.Drawing.Size(128, 24);
+			this.addFigToBarStripButton.Text = "Add figure to bar";
+			this.addFigToBarStripButton.Click += AddFigureToBarToolStripButton_Click;
+			//this.addFigToBarStripButton.Click += AddFigureToBarToolStripButton_Click;
+			// 
+			// mainToolStrip
+			// 
+			this.mainToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addFigToBarStripButton,
+            this.modifyStripButton});
+			this.mainToolStrip.Location = new System.Drawing.Point(0, 0);
+			this.mainToolStrip.Name = "mainToolStrip";
+			this.mainToolStrip.Size = new System.Drawing.Size(882, 27);
+			this.mainToolStrip.TabIndex = 0;
+			this.mainToolStrip.Text = "toolStrip1";
+			// 
+			// modifyStripButton
+			// 
+			this.modifyStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.modifyStripButton.Image = ((System.Drawing.Image)(resources.GetObject("modifyStripButton.Image")));
+			this.modifyStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.modifyStripButton.Name = "modifyStripButton";
+			this.modifyStripButton.Size = new System.Drawing.Size(60, 24);
+			this.modifyStripButton.Text = "Modify";
+			this.modifyStripButton.Click += ModifyToolStripButton_Click;
+			//this.modifyStripButton.Click += ModifyToolStripButton_Click;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(882, 653);
+			this.Controls.Add(this.figureDetectRadioButton);
 			this.Controls.Add(this.toolStrip);
 			this.Controls.Add(this.mainPanel);
 			this.Controls.Add(this.mainToolStrip);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
 			this.Text = "Vector Graphics Editor";
-			this.mainToolStrip.ResumeLayout(false);
-			this.mainToolStrip.PerformLayout();
 			this.toolStrip.ResumeLayout(false);
 			this.toolStrip.PerformLayout();
-			this.mainPanel.ResumeLayout(false);
-			this.mainPanel.PerformLayout();
+			this.mainToolStrip.ResumeLayout(false);
+			this.mainToolStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.ToolStrip mainToolStrip;
-		private System.Windows.Forms.ToolStripButton toolStripButton1;
 		private System.Windows.Forms.ToolStrip toolStrip;
 		private System.Windows.Forms.ToolStripButton selectButton;
 		private System.Windows.Forms.ToolStripButton rectangleButton;
 		private System.Windows.Forms.ToolStripButton ellipseButton;
 		private System.Windows.Forms.Panel mainPanel;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.RadioButton figureDetectRadioButton;
+		private System.Windows.Forms.ToolStripButton addFigToBarStripButton;
+		private System.Windows.Forms.ToolStrip mainToolStrip;
+		private System.Windows.Forms.ToolStripButton modifyStripButton;
 	}
 }
 

@@ -10,7 +10,7 @@ namespace FigureLibrary
 
 		public override Figure Clone()
 		{
-			Rect rectangle =  new Rect();
+			Rect rectangle =  new();
 			rectangle.Resize(X, Y);
 			rectangle.Move(Width, Height);
 			return rectangle;

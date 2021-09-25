@@ -24,5 +24,13 @@ namespace VgeWinForms
 			foreach (var figure in figures)
 				figure.Draw(graphics);
 		}
+
+		public Figure Select(int x, int y)
+		{
+			foreach (var figure in figures)
+				if (figure.Touch(x, y))
+					return figure;
+			return null;
+		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FigureLibrary.Creators
+namespace FigureLibrary
 {
 	public class RectangleCreator : Creator
 	{

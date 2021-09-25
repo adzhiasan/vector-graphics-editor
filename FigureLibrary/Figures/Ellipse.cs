@@ -10,7 +10,7 @@ namespace FigureLibrary
 
 		public override Figure Clone()
 		{
-			Ellipse ellipse = new Ellipse();
+			Ellipse ellipse = new();
 			ellipse.Resize(Width, Height);
 			ellipse.Move(X, Y);
 			return ellipse;
